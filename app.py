@@ -24,9 +24,6 @@ def get_process_page():
     return render_template('process.html')
 
 
-
-
-
 @app.route('/news/kor', methods=['GET'])
 def get_korean_news():
     # 1. mongoDB에서 _id 값을 제외한 모든 데이터 조회해오기(Read)
