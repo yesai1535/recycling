@@ -3,35 +3,38 @@
 <html lang="en">
 
     <head>
-    <!-- Required meta tags -->
+        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.79.0">
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
               crossorigin="anonymous">
         <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
-        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
         <!-- JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
                 integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
                 crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+                crossorigin="anonymous"></script>
 
         <title>How to Recycle?</title>
 
         <style>
-        .card-img-right {
-          height: 100%;
-          border-radius: 0 3px 3px 0;
-        }
+            .card-img-right {
+                height: 100%;
+                border-radius: 0 3px 3px 0;
+            }
 
-        .flex-auto {
-          flex: 0 0 auto;
-        }
+            .flex-auto {
+                flex: 0 0 auto;
+            }
 
         </style>
 
@@ -41,353 +44,354 @@
 
     <body>
         <div class="container">
-          <header class="blog-header py-4">
-            <div class="row flex-nowrap justify-content-between align-items-center">
-              <div class="col-12 text-center">
-                <a class="blog-header-logo text-dark" href="#">분리수거</a>
-              </div>
-            </div>
-          </header>
+            <header class="blog-header py-4">
+                <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-12 text-center">
+                        <a class="blog-header-logo text-dark" href="#">분리수거</a>
+                    </div>
+                </div>
+            </header>
 
-          <div class="nav-scroller py-2 mb-2">
-            <nav class="nav d-flex justify-content-between">
-              <a class="p-2 link-secondary" href="/">How to Recycle?</a>
-              <a class="p-2 link-secondary" href="/news">News</a>
-              <a class="p-2 link-secondary" href="/process">Positive Effects</a>
-              <a class="p-2 link-secondary" href="#">Contact</a>
-            </nav>
-          </div>
+            <div class="nav-scroller py-2 mb-2">
+                <nav class="nav d-flex justify-content-between">
+                    <a class="p-2 link-secondary" href="/">How to Recycle?</a>
+                    <a class="p-2 link-secondary" href="/news">News</a>
+                    <a class="p-2 link-secondary" href="/process">Positive Effects</a>
+                    <a class="p-2 link-secondary" href="#">Contact</a>
+                </nav>
+            </div>
         </div>
 
         <main class="container">
-          <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-            <div class="col-md-6 px-0">
-              <h1 class="display-8 font-italic">분리수거, 어떻게 하지?</h1>
-              <p class="lead my-3">어렵지 않아요! 우리 모두 할 수 있어요!</p>
-            </div>
-          </div>
-
-          <div class="row mb-2">
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">종이팩</strong>
-                  <h3 class="mb-0">종이팩</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
+            <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+                <div class="col-md-6 px-0">
+                    <h1 class="display-8 font-italic">분리수거, 어떻게 하지?</h1>
+                    <p class="lead my-3">어렵지 않아요! 우리 모두 할 수 있어요!</p>
                 </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='paper.jpeg') }}"/>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">유리</strong>
-                  <h3 class="mb-0">유리</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="https://namu.wiki/w/%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0#s-6.3.7.1" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='glass.jpeg') }}"/>
-
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">금속 캔</strong>
-                  <h3 class="mb-0">금속 캔</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='can.jpeg') }}"/>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">합성수지류</strong>
-                  <h3 class="mb-0">페트</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='pett.jpeg') }}"/>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">합성수지류</strong>
-                  <h3 class="mb-0">플라스틱류</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='plastic.jpeg') }}"/>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">합성수지류</strong>
-                  <h3 class="mb-0">비닐류</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='vinyl.jpeg') }}"/>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것-종이류</strong>
-                  <h3 class="mb-0">신문지</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='paper.jpeg') }}"/>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것-종이류</strong>
-                  <h3 class="mb-0">박스류</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='paperpack.jpeg') }}"/>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것-종이류</strong>
-                  <h3 class="mb-0">종이컵</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-                    <img src="{{ url_for('static', filename='paperpack.jpeg') }}"/>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
-                  <h3 class="mb-0">건전지</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
-                  <h3 class="mb-0">형광등</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
-                  <h3 class="mb-0">고철</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
-                  <h3 class="mb-0">장난감</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
-                  <h3 class="mb-0">의류</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
-                  <h3 class="mb-0">의료폐기물</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
-                  <h3 class="mb-0">육류</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
-                  <h3 class="mb-0">채소류</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
-                  <h3 class="mb-0">과일, 곡류</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
-                  <h3 class="mb-0">어패류</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
-                  <h3 class="mb-0">알</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
-                  <h3 class="mb-0">양파, 마늘, 옥수수, 생각, 사탕수수 껍질</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
-                  <h3 class="mb-0">기타</h3>
-                  <div class="mb-1 text-muted">...</div>
-                  <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
-                </div>
-                <div class="col-auto d-none d-lg-block">
-
-                </div>
-              </div>
             </div>
 
-          </div>
+            <div class="row mb-2">
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">종이팩</strong>
+                            <h3 class="mb-0">종이팩</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='paper.jpeg') }}"/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">유리</strong>
+                            <h3 class="mb-0">유리</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="https://namu.wiki/w/%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0#s-6.3.7.1"
+                               class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='glass.jpeg') }}"/>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">금속 캔</strong>
+                            <h3 class="mb-0">금속 캔</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='can.jpeg') }}"/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">합성수지류</strong>
+                            <h3 class="mb-0">페트</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='pett.jpeg') }}"/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">합성수지류</strong>
+                            <h3 class="mb-0">플라스틱류</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='plastic.jpeg') }}"/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">합성수지류</strong>
+                            <h3 class="mb-0">비닐류</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='vinyl.jpeg') }}"/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것-종이류</strong>
+                            <h3 class="mb-0">신문지</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='paper.jpeg') }}"/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것-종이류</strong>
+                            <h3 class="mb-0">박스류</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='paperpack.jpeg') }}"/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것-종이류</strong>
+                            <h3 class="mb-0">종이컵</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <img src="{{ url_for('static', filename='paperpack.jpeg') }}"/>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
+                            <h3 class="mb-0">건전지</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
+                            <h3 class="mb-0">형광등</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
+                            <h3 class="mb-0">고철</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
+                            <h3 class="mb-0">장난감</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
+                            <h3 class="mb-0">의류</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">분리수거 표시가 없는 것</strong>
+                            <h3 class="mb-0">의료폐기물</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
+                            <h3 class="mb-0">육류</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
+                            <h3 class="mb-0">채소류</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
+                            <h3 class="mb-0">과일, 곡류</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
+                            <h3 class="mb-0">어패류</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
+                            <h3 class="mb-0">알</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
+                            <h3 class="mb-0">양파, 마늘, 옥수수, 생각, 사탕수수 껍질</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-primary">음식물 쓰레기</strong>
+                            <h3 class="mb-0">기타</h3>
+                            <div class="mb-1 text-muted">...</div>
+                            <p class="card-text mb-auto">분리수거 방법</p>
+                            <a href="#" class="stretched-link">자세한 링크</a>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
 
 
     </body>
