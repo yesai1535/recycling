@@ -1,243 +1,240 @@
 <!Doctype html>
 <html lang="ko">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-              crossorigin="anonymous">
-        <!-- JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-                crossorigin="anonymous"></script>
-        <!-- 구글폰트 -->
-        <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
-        <title>News</title>
-        <!-- style -->
-        <style type="text/css">
-            /* stylelint-disable selector-list-comma-newline-after */
-            .blog-header {
-                line-height: 1;
-                border-bottom: 1px solid #e5e5e5;
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+    <title>News</title>
+    <!-- style -->
+    <style>
+        .container {
+            max-width: 960px;
+        }
+
+        /*
+         * Custom translucent site header
+         */
+
+        .site-header {
+            background-color: rgba(0, 0, 0, .85);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        .site-header a {
+            color: #8e8e8e;
+            transition: color .15s ease-in-out;
+        }
+
+        .site-header a:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /*
+         * Dummy devices (replace them with your own or something else entirely!)
+         */
+
+        .product-device {
+            position: absolute;
+            right: 10%;
+            bottom: -30%;
+            width: 300px;
+            height: 540px;
+            background-color: #333;
+            border-radius: 21px;
+            transform: rotate(30deg);
+        }
+
+        .product-device::before {
+            position: absolute;
+            top: 10%;
+            right: 10px;
+            bottom: 10%;
+            left: 10px;
+            content: "";
+            background-color: rgba(255, 255, 255, .1);
+            border-radius: 5px;
+        }
+
+        .product-device-2 {
+            top: -25%;
+            right: auto;
+            bottom: 0;
+            left: 5%;
+            background-color: #e5e5e5;
+        }
+
+
+        /*
+         * Extra utilities
+         */
+
+        .flex-equal > * {
+            flex: 1;
+        }
+
+        @media (min-width: 768px) {
+            .flex-md-equal > * {
+                flex: 1;
             }
-            .blog-header-logo {
-                font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-                font-size: 2.25rem;
-            }
-            .blog-header-logo:hover {
-                text-decoration: none;
-            }
-            h1, h2, h3, h4, h5, h6 {
-                font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-            }
-            .display-4 {
-                font-size: 2.5rem;
-            }
-            @media (min-width: 768px) {
-                .display-4 {
-                    font-size: 3rem;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#cards-box").html("");
+            showArticles();
+        });
+
+        function postArticles() {
+            let title = $('title').val();
+            let desc = $('description').val();
+            let image = $('image').val();
+            $.ajax({
+                type: "POST",
+                url: "/news",
+                data: {url: url, image: image, desc: desc, title: title},
+                success: function (response) { // 성공하면
+                    if (response["result"] == "success") {
+                        alert(response["msg"]);
+                    }
                 }
-            }
-            .nav-scroller {
-                position: relative;
-                z-index: 2;
-                height: 2.75rem;
-                overflow-y: hidden;
-            }
-            .nav-scroller .nav {
-                display: flex;
-                flex-wrap: nowrap;
-                padding-bottom: 1rem;
-                margin-top: -1px;
-                overflow-x: auto;
-                text-align: center;
-                white-space: nowrap;
-                -webkit-overflow-scrolling: touch;
-            }
-            .nav-scroller .nav-link {
-                padding-top: .75rem;
-                padding-bottom: .75rem;
-                font-size: .875rem;
-            }
-            .card-img-right {
-                height: 100%;
-                border-radius: 0 3px 3px 0;
-            }
-            .flex-auto {
-                flex: 0 0 auto;
-            }
-            .h-250 {
-                height: 250px;
-            }
-            @media (min-width: 768px) {
-                .h-md-250 {
-                    height: 250px;
+            })
+        }
+
+        function showArticles() {
+            $.ajax({
+                type: "GET",
+                url: "/news/kor",
+                data: {},
+                success: function (response) {
+                    if (response["result"] == "success") {
+                        let articles = response['articles'];
+                        for (let i = 0; i < articles.length; i++) {
+                            makeKorCard(articles[i]["url"], articles[i]["title"], articles[i]["description"], articles[i]["image"])
+                        }
+                    }
                 }
-            }
-            /* Pagination */
-            .blog-pagination {
-                margin-bottom: 4rem;
-            }
-            .blog-pagination > .btn {
-                border-radius: 2rem;
-            }
-            /*
-             * Blog posts
-             */
-            .blog-post {
-                margin-bottom: 4rem;
-            }
-            .blog-post-title {
-                margin-bottom: .25rem;
-                font-size: 2.5rem;
-            }
-            .blog-post-meta {
-                margin-bottom: 1.25rem;
-                color: #727272;
-            }
-            /*
-             * Footer
-             */
-            .blog-footer {
-                padding: 2.5rem 0;
-                color: #727272;
-                text-align: center;
-                background-color: #f9f9f9;
-                border-top: .05rem solid #e5e5e5;
-            }
-            .blog-footer p:last-child {
-                margin-bottom: 0;
-            }
-        </style>
-        <script>
-            $(document).ready(function () {
-                $("#cards-box").html("");
-                showArticles();
-            });
-            function postArticles() {
-                let title = $('title').val();
-                let desc = $('description').val();
-                let image = $('image').val();
-                $.ajax({
-                    type: "POST",
-                    url: "/news",
-                    data: {url: url, image: image, desc: desc, title: title},
-                    success: function (response) { // 성공하면
-                        if (response["result"] == "success") {
-                            alert(response["msg"]);
+            })
+            $.ajax({
+                type: "GET",
+                url: "/news/eng",
+                data: {},
+                success: function (response) {
+                    if (response["result"] == "success") {
+                        let articles = response['articles'];
+                        for (let i = 0; i < articles.length; i++) {
+                            makeEngCard(articles[i]["url"], articles[i]["title"], articles[i]["description"], articles[i]["image"])
                         }
                     }
-                })
-            }
-            function showArticles() {
-                $.ajax({
-                    type: "GET",
-                    url: "/news/kor",
-                    data: {},
-                    success: function (response) {
-                        if (response["result"] == "success") {
-                            let articles = response['articles'];
-                            for (let i = 0; i < articles.length; i++) {
-                                makeKorCard(articles[i]["url"], articles[i]["title"], articles[i]["description"], articles[i]["image"])
-                            }
-                        }
-                    }
-                })
-                $.ajax({
-                    type: "GET",
-                    url: "/news/eng",
-                    data: {},
-                    success: function (response) {
-                        if (response["result"] == "success") {
-                            let articles = response['articles'];
-                            for (let i = 0; i < articles.length; i++) {
-                                makeEngCard(articles[i]["url"], articles[i]["title"], articles[i]["description"], articles[i]["image"])
-                            }
-                        }
-                    }
-                })
-            }
-            function makeKorCard(url, title, desc, image) {
-                let temp_html = `<div class="card">
+                }
+            })
+        }
+
+        function makeKorCard(url, title, desc, image) {
+            let temp_html = `<div class="card">
                                     <img class="card-img-top" src="${image}" alt="Card image cap">
                                     <div class="card-body">
                                     <a href="${url}" target="_blank" class="card-title">${title}</a>
                                     <p class="card-text">${desc}</p>
                                     </div>
                                   </div>`;
-                $("#kor-box").append(temp_html);
-            }
-            function makeEngCard(url, title, desc, image) {
-                let temp_html = `<div class="card">
+            $("#kor-box").append(temp_html);
+        }
+
+        function makeEngCard(url, title, desc, image) {
+            let temp_html = `<div class="card">
                                     <img class="card-img-top" src="${image}" alt="Card image cap">
                                     <div class="card-body">
                                     <a href="${url}" target="_blank" class="card-title">${title}</a>
                                     <p class="card-text">${desc}</p>
                                     </div>
                                   </div>`;
-                $("#eng-box").append(temp_html);
-            }
-        </script>
-        <style type="text/css">
-            * {
-                font-family: "Do Hyeon", sans-serif;
-            }
-            h1,
-            h5 {
-                display: inline;
-            }
-            .info {
-                margin-top: 20px;
-                margin-bottom: 20px;
-            }
-            .review {
-                text-align: center;
-            }
-            .reviews {
-                margin-top: 100px;
-            }
-            .box-container {
-                display: flex;
-                justify-content: space-evenly;
-                width: 80vw;
-                margin: auto;
-            }
-            .card {
-                margin: 20px 5px 20px 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="row">
-            <div class="col-md-8">
-              <article class="blog-post">
-                <h2 class="blog-post-title">News Section</h2>
-              </article>
+            $("#eng-box").append(temp_html);
+        }
+    </script>
+    <style type="text/css">
+        * {
+            font-family: "Do Hyeon", sans-serif;
+        }
+
+        h1,
+        h5 {
+            display: inline;
+        }
+
+        .info {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .review {
+            text-align: center;
+        }
+
+        .reviews {
+            margin-top: 100px;
+        }
+
+        .box-container {
+            display: flex;
+            justify-content: space-evenly;
+            width: 80vw;
+            margin: auto;
+        }
+
+        .card {
+            margin: 20px 5px 20px 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-8">
+        <article class="blog-post">
+            <h2 class="blog-post-title">News Section</h2>
+        </article>
+    </div>
+</div>
+<div class="wrap">
+    <div class="box-container">
+        <div id="kor-box">
+        </div>
+        <div id="eng-box">
+        </div>
+    </div>
+</div>
+<div class="container">
+    <header class="blog-header py-4">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-12 text-center">
+                <a class="blog-header-logo text-dark" href="#">분리수거</a>
             </div>
         </div>
-        <div class="wrap">
-            <div id="post-box" class="form-post" style="display:none">
-                <div>
-                    <div class="form-group">
-                        <label for="post-url">아티클 URL</label>
-                        <input id="post-url" class="form-control" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="post-comment">간단 코멘트</label>
-                        <textarea id="post-comment" class="form-control" rows="2"></textarea>
-                    </div>
-                    <button type="button" class="btn btn-primary" onclick="postArticle()">기사저장</button>
-                </div>
-            </div>
-            <div class="box-container">
-                <div id="kor-box">
-                </div>
-                <div id="eng-box">
-                </div>
-            </div>
-        </div>
-    </body>
+    </header>
+</div>
+
+<div class="nav-scroller py-2 mb-2">
+    <nav class="nav d-flex justify-content-between">
+        <a class="p-2 link-secondary" href="/">How to Recycle?</a>
+        <a class="p-2 link-secondary" href="/news">News</a>
+        <a class="p-2 link-secondary" href="/process">Positive Effects</a>
+        <a class="p-2 link-secondary" href="#">Contact</a>
+    </nav>
+</div>
+
+
+</body>
 </html>

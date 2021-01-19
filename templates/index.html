@@ -24,19 +24,14 @@
         <title>How to Recycle?</title>
 
         <style>
-          .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-          }
+        .card-img-right {
+          height: 100%;
+          border-radius: 0 3px 3px 0;
+        }
 
-          @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-              font-size: 3.5rem;
-            }
-          }
+        .flex-auto {
+          flex: 0 0 auto;
+        }
 
         </style>
 
@@ -56,9 +51,9 @@
 
           <div class="nav-scroller py-2 mb-2">
             <nav class="nav d-flex justify-content-between">
-              <a class="p-2 link-secondary" href="#">How to Recycle?</a>
-              <a class="p-2 link-secondary" href="#">News</a>
-              <a class="p-2 link-secondary" href="#">Positive Effects</a>
+              <a class="p-2 link-secondary" href="/">How to Recycle?</a>
+              <a class="p-2 link-secondary" href="/news">News</a>
+              <a class="p-2 link-secondary" href="/process">Positive Effects</a>
               <a class="p-2 link-secondary" href="#">Contact</a>
             </nav>
           </div>
@@ -95,7 +90,7 @@
                   <h3 class="mb-0">유리</h3>
                   <div class="mb-1 text-muted">...</div>
                   <p class="card-text mb-auto">분리수거 방법</p>
-                  <a href="#" class="stretched-link">자세한 링크</a>
+                  <a href="https://namu.wiki/w/%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0#s-6.3.7.1" class="stretched-link">자세한 링크</a>
                 </div>
                 <div class="col-auto d-none d-lg-block">
                     <img src="{{ url_for('static', filename='glass.jpeg') }}"/>
