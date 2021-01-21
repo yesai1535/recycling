@@ -21,7 +21,7 @@ def get_articles_naver():
     return urls
 
 # 출처 url로부터 뉴스의 사진, 제목, 기사 정보를 가져오고 news 콜렉션에 저장합니다.
-def insert_articles(url):
+def insert_navernews(url):
     headers = {
         'accept-charset': 'UTF-8',
         'Content-Type': 'text/html; charset=utf-8',
@@ -39,15 +39,15 @@ def insert_articles(url):
         'isKor': True,
         'url': url,
     }
-    db.articles.insert_one(doc)
+    db.navernews.insert_one(doc)
     print('완료!', title)
 
 # 기존 news 콜렉션을 삭제하고, 출처 url들을 가져온 후, 크롤링하여 DB에 저장합니다.
 def insert_all():
-    db.articles.drop()
+    db.navernews.drop()
     urls = get_articles_naver()
     for url in urls:
-        insert_articles(url)
+        insert_navernews(url)
 
 ### 실행하기
 insert_all()

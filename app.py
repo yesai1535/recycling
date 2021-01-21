@@ -25,21 +25,21 @@ def get_process_page():
 
 
 @app.route('/news/kor', methods=['GET'])
-def get_korean_news():
+def get_navernews():
     # 1. mongoDB에서 _id 값을 제외한 모든 데이터 조회해오기(Read)
-    articles = list(db.articles.find({'isKor': True}, {'_id': 0}))
-    articles.reverse()
+    navernews = list(db.navernews.find({'isKor': True}, {'_id': 0}))
+    navernews.reverse()
 
     # 2. articles라는 키 값으로 articles 정보 보내주기
-    return jsonify({'result': 'success', 'articles': articles})
+    return jsonify({'result': 'success', 'navernews': navernews})
 
-@app.route('/news/eng', methods=['GET'])
-def get_english_news():
+@app.route('/news/kor', methods=['GET'])
+def get_daumnews():
     # 1. mongoDB에서 _id 값을 제외한 모든 데이터 조회해오기(Read)
-    articles = list(db.articles.find({'isKor': False}, {'_id': 0}))
+    daumnews = list(db.daumnews.find({'isKor': True}, {'_id': 0}))
 
     # 2. articles라는 키 값으로 articles 정보 보내주기
-    return jsonify({'result': 'success', 'articles': articles})
+    return jsonify({'result': 'success', 'daumnews': daumnews})
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=27017, debug=True)

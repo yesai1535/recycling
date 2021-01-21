@@ -126,29 +126,34 @@
                     data: {},
                     success: function (response) {
                         if (response["result"] == "success") {
-                            let articles = response['articles'];
-                            for (let i = 0; i < articles.length; i++) {
-                                makeKorCard(articles[i]["url"], articles[i]["title"], articles[i]["description"], articles[i]["image"])
+                            let navernews = response['navernews'];
+                            for (let i = 0; i < navernews.length; i++) {
+                                makeKorCard(navernews[i]["url"], navernews[i]["title"], navernews[i]["description"], navernews[i]["image"])
                             }
                         }
                     }
                 })
+
+            }
+
+            function showArticles() {
                 $.ajax({
                     type: "GET",
-                    url: "/news/eng",
+                    url: "/news/kor",
                     data: {},
                     success: function (response) {
                         if (response["result"] == "success") {
-                            let articles = response['articles'];
-                            for (let i = 0; i < articles.length; i++) {
-                                makeEngCard(articles[i]["url"], articles[i]["title"], articles[i]["description"], articles[i]["image"])
+                            let daumnews = response['daumnews'];
+                            for (let i = 0; i < daumnews.length; i++) {
+                                makeKorCard(daumnews[i]["url"], daumnews[i]["title"], daumnews[i]["description"], daumnews[i]["image"])
                             }
                         }
                     }
                 })
+
             }
 
-            function makeKorCard(url, title, desc, image) {
+            function makeNaverCard(url, title, desc, image) {
                 let temp_html = `<div class="card">
                                     <img class="card-img-top" src="${image}" alt="Card image cap">
                                     <div class="card-body">
@@ -156,10 +161,10 @@
                                     <p class="card-text">${desc}</p>
                                     </div>
                                   </div>`;
-                $("#kor-box").append(temp_html);
+                $("#naver-box").append(temp_html);
             }
 
-            function makeEngCard(url, title, desc, image) {
+            function makeDaumCard(url, title, desc, image) {
                 let temp_html = `<div class="card">
                                     <img class="card-img-top" src="${image}" alt="Card image cap">
                                     <div class="card-body">
@@ -167,7 +172,7 @@
                                     <p class="card-text">${desc}</p>
                                     </div>
                                   </div>`;
-                $("#eng-box").append(temp_html);
+                $("#daum-box").append(temp_html);
             }
         </script>
         <style type="text/css">
@@ -206,40 +211,34 @@
         </style>
     </head>
     <body>
-        <div class="row">
-            <div class="col-md-8">
-                <article class="blog-post">
-                    <h2 class="blog-post-title">News Section</h2>
-                </article>
-            </div>
-        </div>
-        <div class="wrap">
-            <div class="box-container">
-                <div id="kor-box">
-                </div>
-                <div id="eng-box">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <header class="blog-header py-4">
-                <div class="row flex-nowrap justify-content-between align-items-center">
-                    <div class="col-12 text-center">
-                        <a class="blog-header-logo text-dark" href="#">분리수거</a>
-                    </div>
-                </div>
-            </header>
-        </div>
 
-        <div class="nav-scroller py-2 mb-2">
-            <nav class="nav d-flex justify-content-between">
-                <a class="p-2 link-secondary" href="/">How to Recycle?</a>
-                <a class="p-2 link-secondary" href="/news">News</a>
-                <a class="p-2 link-secondary" href="/process">Positive Effects</a>
-                <a class="p-2 link-secondary" href="#">Contact</a>
+        <header class="site-header sticky-top py-1">
+            <nav class="container d-flex flex-column flex-md-row justify-content-between">
+                <a class="py-2" href="#" aria-label="Product">
+                    <img src="{{ url_for('static', filename='recyclelogo.jpeg') }}" width="24" height="24" fill="none"
+                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                         class="d-block mx-auto" role="img" viewBox="0 0 24 24">
+                </a>
+                <a class="py-2 d-none d-md-inline-block" href="/">분리수거 방법</a>
+                <a class="py-2 d-none d-md-inline-block" href="/news">뉴스</a>
+                <a class="py-2 d-none d-md-inline-block" href="/process">수거 과정 및 영향</a>
             </nav>
-        </div>
+        </header>
 
+        <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+            <div id="naver-box">
+                <div class="bg-light shadow-sm mx-auto"
+                     style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+            </div>
+            <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                <div class="my-3 py-3">
+                    <h2 class="display-5">Another headline</h2>
+                    <p class="lead">And an even wittier subheading.</p>
+                </div>
+                <div class="bg-light shadow-sm mx-auto"
+                     style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+            </div>
+        </div>
 
     </body>
 </html>

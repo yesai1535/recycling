@@ -27,6 +27,81 @@
         <title>How to Recycle?</title>
 
         <style>
+            /* stylelint-disable selector-list-comma-newline-after */
+            .site-header {
+                background-color: rgba(0, 0, 0, .85);
+                -webkit-backdrop-filter: saturate(180%) blur(20px);
+                backdrop-filter: saturate(180%) blur(20px);
+            }
+
+            .site-header a {
+                color: #8e8e8e;
+                transition: color .15s ease-in-out;
+            }
+
+            .site-header a:hover {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .can {
+                width: 200x;
+                height: 200px;
+                padding: 5px;
+            }
+
+            .blog-header {
+                line-height: 1;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            .blog-header-logo {
+                font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+                font-size: 2.25rem;
+            }
+
+            .blog-header-logo:hover {
+                text-decoration: none;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-family: "Playfair Display", Georgia, "Times New Roman", serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+            }
+
+            .display-4 {
+                font-size: 2.5rem;
+            }
+
+            @media (min-width: 768px) {
+                .display-4 {
+                    font-size: 3rem;
+                }
+            }
+
+            .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+            }
+
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-scroller .nav-link {
+                padding-top: .75rem;
+                padding-bottom: .75rem;
+                font-size: .875rem;
+            }
+
             .card-img-right {
                 height: 100%;
                 border-radius: 0 3px 3px 0;
@@ -36,6 +111,57 @@
                 flex: 0 0 auto;
             }
 
+            .h-250 {
+                height: 250px;
+            }
+
+            @media (min-width: 768px) {
+                .h-md-250 {
+                    height: 250px;
+                }
+            }
+
+            /* Pagination */
+            .blog-pagination {
+                margin-bottom: 4rem;
+            }
+
+            .blog-pagination > .btn {
+                border-radius: 2rem;
+            }
+
+            /*
+             * Blog posts
+             */
+            .blog-post {
+                margin-bottom: 4rem;
+            }
+
+            .blog-post-title {
+                margin-bottom: .25rem;
+                font-size: 2.5rem;
+            }
+
+            .blog-post-meta {
+                margin-bottom: 1.25rem;
+                color: #727272;
+            }
+
+            /*
+             * Footer
+             */
+            .blog-footer {
+                padding: 2.5rem 0;
+                color: #727272;
+                text-align: center;
+                background-color: #f9f9f9;
+                border-top: .05rem solid #e5e5e5;
+            }
+
+            .blog-footer p:last-child {
+                margin-bottom: 0;
+            }
+
         </style>
 
         <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
@@ -43,27 +169,23 @@
     </head>
 
     <body>
-        <div class="container">
-            <header class="blog-header py-4">
-                <div class="row flex-nowrap justify-content-between align-items-center">
-                    <div class="col-12 text-center">
-                        <a class="blog-header-logo text-dark" href="#">분리수거</a>
-                    </div>
-                </div>
-            </header>
+        <header class="site-header sticky-top py-1">
+            <nav class="container d-flex flex-column flex-md-row justify-content-between">
+                <a class="py-2" href="#" aria-label="Product">
+                    <img src="{{ url_for('static', filename='recyclelogo.jpeg') }}" width="24" height="24" fill="none"
+                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"
+                         class="d-block mx-auto" role="img" viewBox="0 0 24 24">
+                </a>
+                <a class="py-2 d-none d-md-inline-block" href="/">분리수거 방법</a>
+                <a class="py-2 d-none d-md-inline-block" href="/news">뉴스</a>
+                <a class="py-2 d-none d-md-inline-block" href="/process">수거 과정 및 영향</a>
 
-            <div class="nav-scroller py-2 mb-2">
-                <nav class="nav d-flex justify-content-between">
-                    <a class="p-2 link-secondary" href="/">How to Recycle?</a>
-                    <a class="p-2 link-secondary" href="/news">News</a>
-                    <a class="p-2 link-secondary" href="/process">Positive Effects</a>
-                    <a class="p-2 link-secondary" href="#">Contact</a>
-                </nav>
-            </div>
-        </div>
 
-        <main class="container">
-            <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+            </nav>
+        </header>
+
+        <main class="container flex-auto justify-content-between" style="width: 80%; height: 300px; padding-top: 50px; border-radius: 21px 21px 0 0;">
+            <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark ">
                 <div class="col-md-6 px-0">
                     <h1 class="display-8 font-italic">분리수거, 어떻게 하지?</h1>
                     <p class="lead my-3">어렵지 않아요! 우리 모두 할 수 있어요!</p>
@@ -113,7 +235,7 @@
                             <a href="#" class="stretched-link">자세한 링크</a>
                         </div>
                         <div class="col-auto d-none d-lg-block">
-                            <img src="{{ url_for('static', filename='can.jpeg') }}"/>
+                            <img class="can" src="{{ url_for('static', filename='can.jpeg') }}"/>
 
                         </div>
                     </div>
@@ -390,8 +512,23 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
+
+            <footer class="container py-5">
+                <div class="row">
+                    <div class="col-12 col-md">
+                        <img src="{{ url_for('static', filename='recyclelogo.jpeg') }}" width="24" height="24" fill="none" stroke="currentColor"
+                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2"
+                             role="img"
+                             viewBox="0 0 24 24"><title>Product</title>
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"></path>
+                        </svg>
+                        <small class="d-block mb-3 text-muted">Contact : yesai1535@gmail.com</small>
+                    </div>
+                </div>
+            </footer>
 
 
     </body>
