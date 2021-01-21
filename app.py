@@ -24,7 +24,7 @@ def get_process_page():
     return render_template('process.html')
 
 
-@app.route('/news/kor', methods=['GET'])
+@app.route('/news/naver', methods=['GET'])
 def get_navernews():
     # 1. mongoDB에서 _id 값을 제외한 모든 데이터 조회해오기(Read)
     navernews = list(db.navernews.find({'isKor': True}, {'_id': 0}))
@@ -33,7 +33,7 @@ def get_navernews():
     # 2. articles라는 키 값으로 articles 정보 보내주기
     return jsonify({'result': 'success', 'navernews': navernews})
 
-@app.route('/news/kor', methods=['GET'])
+@app.route('/news/daum', methods=['GET'])
 def get_daumnews():
     # 1. mongoDB에서 _id 값을 제외한 모든 데이터 조회해오기(Read)
     daumnews = list(db.daumnews.find({'isKor': True}, {'_id': 0}))

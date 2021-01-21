@@ -122,30 +122,27 @@
             function showArticles() {
                 $.ajax({
                     type: "GET",
-                    url: "/news/kor",
+                    url: "/news/naver",
                     data: {},
                     success: function (response) {
                         if (response["result"] == "success") {
                             let navernews = response['navernews'];
                             for (let i = 0; i < navernews.length; i++) {
-                                makeKorCard(navernews[i]["url"], navernews[i]["title"], navernews[i]["description"], navernews[i]["image"])
+                                makeNaverCard(navernews[i]["url"], navernews[i]["title"], navernews[i]["description"], navernews[i]["image"])
                             }
                         }
                     }
                 })
 
-            }
-
-            function showArticles() {
                 $.ajax({
                     type: "GET",
-                    url: "/news/kor",
+                    url: "/news/daum",
                     data: {},
                     success: function (response) {
                         if (response["result"] == "success") {
                             let daumnews = response['daumnews'];
                             for (let i = 0; i < daumnews.length; i++) {
-                                makeKorCard(daumnews[i]["url"], daumnews[i]["title"], daumnews[i]["description"], daumnews[i]["image"])
+                                makeDaumCard(daumnews[i]["url"], daumnews[i]["title"], daumnews[i]["description"], daumnews[i]["image"])
                             }
                         }
                     }
@@ -230,14 +227,18 @@
                 <div class="bg-light shadow-sm mx-auto"
                      style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
             </div>
-            <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-                <div class="my-3 py-3">
-                    <h2 class="display-5">Another headline</h2>
-                    <p class="lead">And an even wittier subheading.</p>
-                </div>
+            <div id="daum-box">
                 <div class="bg-light shadow-sm mx-auto"
                      style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
             </div>
+        </div>
+        <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div class="my-3 py-3">
+                <h2 class="display-5">Another headline</h2>
+                <p class="lead">And an even wittier subheading.</p>
+            </div>
+            <div class="bg-light shadow-sm mx-auto"
+                 style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
         </div>
 
     </body>
